@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:52:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/01 16:00:42 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/01 16:11:29 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push_swap_error(char *str, t_stack *stack)
 {
-	printf("Error\n");
-	printf("%s\n", str);
+	ft_printf("Error\n");
+	ft_printf("%s\n", str);
 	exit(1);
 }
