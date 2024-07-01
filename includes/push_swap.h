@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 15:07:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/01 16:02:53 by ijaber           ###   ########.fr       */
+/*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
+/*   Updated: 2024/07/01 16:01:07 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	sa(t_stack *stack_a)
-{
-	t_double_list	tmp;
+# include "struct.h"
+# include <stdio.h>
+# include <stdlib.h>
 
-	if (stack_a->size < 2)
-		push_swap_error("Not enough elements in stack A", stack_a);
-	tmp.content = stack_a->front->content;
-	stack_a->front->content = stack_a->front->next->content;
-	stack_a->front->next->content = tmp.content;
-}
+// utils
+void	push_swap_error(char *str, t_stack *stack);
+
+// operations
+void	sa(t_stack *stack_a);
+
+#endif
