@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operations2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 15:07:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/01 16:02:53 by ijaber           ###   ########.fr       */
+/*   Created: 2024/07/03 16:25:18 by ijaber            #+#    #+#             */
+/*   Updated: 2024/07/03 17:43:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "push_swap.h"
 
-void	sa(t_stack *stack_a)
+void	rotate(t_stack **stack)
 {
-	t_double_list	tmp;
+	t_stack	*tmp;
 
-	if (stack_a->size < 2)
-		push_swap_error("Not enough elements in stack A", stack_a);
-	tmp.content = stack_a->front->content;
-	stack_a->front->content = stack_a->front->next->content;
-	stack_a->front->next->content = tmp.content;
+	if (!*stack || !(*stack)->next)
+		return ;
+	tmp = stack;
+	stack = ft_lstlast(stack);
+}
+
+void	ra(t_stack *stack_a)
+{
+	rotate(stack_a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_stack *stack_b)
+{
+	rotate(stack_b);
+	ft_printf("rb\n");
 }

@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structures.h                                       :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:59:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/01 15:10:45 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/03 12:34:47 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
 
-typedef struct s_double_list
-{
-	void					*content;
-	struct s_double_list	*next;
-	struct s_double_list	*last;
-}							t_double_list;
-
 typedef struct s_stack
 {
-	struct s_double_list	*front;
-	struct s_double_list	*rear;
-	int						size;
-}							t_stack;
+	int				value;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}					t_stack;
 
 #endif
