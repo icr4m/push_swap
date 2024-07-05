@@ -1,7 +1,9 @@
 NAME = push_swap
 
-SRCS = $(addprefix srcs/, push_swap_utils.c operations1.c main.c)
+SRCS = $(addprefix srcs/, push_swap_utils.c operations1.c operations2.c operations3.c operations4.c parsing.c main.c)
 OBJ =  $(SRCS:.c=.o)
+
+# CCFLAGS = -Wall -Wextra -Werror
 
 INCLUDES = -Iincludes -I$(LIBFT_PATH)/includes
 

@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations1.c                                      :+:      :+:    :+:   */
+/*   operations3.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/01 15:07:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 14:20:30 by ijaber           ###   ########.fr       */
+/*   Created: 2024/07/05 12:51:17 by ijaber            #+#    #+#             */
+/*   Updated: 2024/07/05 13:00:16 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack_a)
+void	pa(t_stack **stack_a, t_stack **stack_b)
 {
-	int	tmp;
+	t_stack	*tmp;
 
-	if (!*stack_a || !(*stack_a)->next)
+	if (!*stack_b)
 		return ;
-	tmp = (*stack_a)->value;
-	(*stack_a)->value = (*stack_a)->next->value;
-	(*stack_a)->next->value = tmp;
+	tmp = *stack_a;
+	*stack_a = *stack_b;
+	*stack_b = (*stack_b)->next;
+	(*stack_a)->next = tmp;
+	write(1, "pa\n", 3);
 }
 
-void	sa(t_stack **stack_a)
+void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	swap(stack_a);
-	ft_printf("sa\n");
-}
+	t_stack	*tmp;
 
-void	sb(t_stack **stack_b)
-{
-	swap(stack_b);
-	ft_printf("sb\n");
-}
-
-void	ss(t_stack **stack_a, t_stack **stack_b)
-{
-	swap(stack_a);
-	swap(stack_b);
-	ft_printf("ss\n");
+	if (!*stack_a)
+		return ;
+	tmp = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = (*stack_a)->next;
+	(*stack_b)->next = tmp;
+	write(1, "pb\n", 3);
 }

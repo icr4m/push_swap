@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/03 16:22:50 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/05 16:22:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,31 @@
 # include <stdlib.h>
 
 // utils
-void	push_swap_error(char *str, t_stack *stack);
+void	push_swap_error(char *str);
+void	push(t_stack **stack, int value, int index);
+
+// parsing
+void	parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b);
 
 // operations 1
-void	swap(t_stack *stack_a);
-void	sa(t_stack *stack_a);
-void	sb(t_stack *stack_b);
+void	swap(t_stack **stack_a);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
+
+// operations 2
+void	rotate(t_stack **stack);
+void	ra(t_stack **stack_a);
+void	rb(t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
+
+// operations 3
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
+
+// operations 4
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack **stack_a);
+void	rrb(t_stack **stack_b);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 #endif
