@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:59:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/03 12:34:47 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/05 17:37:26 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef struct s_stack
 {
-	int				value;
-	int				index;
+	long			value;
+	long			index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }					t_stack;

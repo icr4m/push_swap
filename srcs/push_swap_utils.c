@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:52:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 16:22:52 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/05 17:35:09 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,28 @@ void	push_swap_error(char *str)
 	exit(1);
 }
 
-void	push(t_stack **stack, int value, int index)
+void	add_fill_new_node(t_stack **stack, int value, int index)
 {
-	t_stack	*new;
+	t_stack	*new_node;
+	t_stack	*tmp;
 
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		push_swap_error("Push failed");
-	new->value = value;
-	new->next = *stack;
-	*stack = new;
+	new_node = malloc(sizeof(t_stack));
+	if (!new_node)
+		push_swap_error("new_node malloc failed");
+	new_node->value = value;
+	new_node->index = index;
+	tmp = *stack;
+	if (!*stack)
+	{
+		new_node->next = NULL;
+		*stack = new_node;
+		return ;
+	}
+	else
+	{
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new_node;
+		new_node->next = NULL;
+	}
 }

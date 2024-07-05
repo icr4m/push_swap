@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 16:21:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/05 17:43:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_stack(const char *label, t_stack *stack)
 	printf("%s top -> ", label);
 	while (stack)
 	{
-		printf("%d ", stack->value);
+		printf("%ld ", stack->value);
 		stack = stack->next;
 	}
 	printf("-> bottom\n");
@@ -49,7 +49,7 @@ int	main(int ac, char **av)
 	parsing(ac, av, &stack_a, &stack_b);
 	print_stack("Stack A", stack_a);
 	print_stack("Stack B", stack_b);
-	rrr(&stack_a, &stack_b);
+	sa(&stack_a);
 	print_stack("Stack A", stack_a);
 	print_stack("Stack B", stack_b);
 	free_stack(&stack_a);
