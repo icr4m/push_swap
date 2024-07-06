@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 18:13:24 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/06 02:10:21 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	push_swap_error(char *str);
 void	add_fill_new_node(t_stack **stack, int value, int index);
 
 // parsing
-void	check_args(int ac, char **av);
-void	parsing(int ac, char **av, t_stack **stack_a, t_stack **stack_b);
+char	**check_args(int ac, char **av);
+void	fill_stack(t_stack **stack_a, char **splitted);
 
 // parsing utils
 void	check_correct(char **str);

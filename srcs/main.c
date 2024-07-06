@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 17:43:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/06 02:10:49 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	parsing(ac, av, &stack_a, &stack_b);
+	fill_stack(&stack_a, check_args(ac, av));
 	print_stack("Stack A", stack_a);
 	print_stack("Stack B", stack_b);
 	sa(&stack_a);
