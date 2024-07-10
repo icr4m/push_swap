@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 17:08:22 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 17:39:05 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 18:54:03 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,27 @@ void	sort_two(t_stack **stack)
 
 void	sort_three(t_stack **stack)
 {
+	long	first;
+	long	second;
+	long	third;
+
+	first = (*stack)->value;
+	second = (*stack)->next->value;
+	third = (*stack)->next->next->value;
+	if (first > second && second < third && first < third)
+		sa(stack);
+	else if (first > second && second > third)
+	{
+		sa(stack);
+		rra(stack);
+	}
+	else if (first > second && second < third && first > third)
+		ra(stack);
+	else if (first < second && second > third && first < third)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (first < second && second > third && first > third)
+		rra(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 17:23:23 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 18:29:56 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,13 @@ void	free_stack(t_stack **stack);
 // stack utils
 int		ft_stacksize(t_stack *stack);
 
+// sorted
+int		checksorted(t_stack *stack_a);
+
 // little sort
+void	little_sort(t_stack **stack);
 void	sort_two(t_stack **stack);
+void	sort_three(t_stack **stack);
 
 // operations 1
 void	swap(t_stack **stack_a);

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   sorted.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 14:57:12 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 18:32:19 by ijaber           ###   ########.fr       */
+/*   Created: 2024/07/10 18:25:22 by ijaber            #+#    #+#             */
+/*   Updated: 2024/07/10 18:29:08 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**check_args(int ac, char **av)
+int	checksorted(t_stack *stack_a)
 {
-	char	**splitted;
-	int		i;
+	int i;
 
-	i = 1;
-	check_correct(av + 1);
-	if (ac < 2)
-		push_swap_error("No arguments");
-	if (ac == 2)
+	i = stack_a->value;
+	while (stack_a)
 	{
-		return (splitted = ft_split(av[1], ' '));
+		if (i > stack_a->value)
+			return (0);
+		i = stack_a->value;
+		stack_a = stack_a->next;
 	}
-	else
-		return (av + 1);
+	return (1);
 }
