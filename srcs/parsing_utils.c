@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 17:41:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 18:04:20 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 15:36:04 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,24 @@ void	check_correct(char **str)
 			j++;
 		}
 		i++;
+	}
+}
+
+void	check_doublon(t_stack **stack)
+{
+	t_stack	*tmp;
+	t_stack	*tmp2;
+
+	tmp = *stack;
+	while (tmp != NULL)
+	{
+		tmp2 = tmp->next;
+		while (tmp2 != NULL)
+		{
+			if (tmp->value == tmp2->value)
+				push_swap_error("Doublon");
+			tmp2 = tmp2->next;
+		}
+		tmp = tmp->next;
 	}
 }
