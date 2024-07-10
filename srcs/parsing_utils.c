@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 17:41:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 15:36:04 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 16:20:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void	check_correct(char **str)
 
 void	check_doublon(t_stack **stack)
 {
-	t_stack	*tmp;
-	t_stack	*tmp2;
+	t_stack *tmp;
+	t_stack *tmp2;
 
 	tmp = *stack;
 	while (tmp != NULL)
@@ -47,7 +47,7 @@ void	check_doublon(t_stack **stack)
 		while (tmp2 != NULL)
 		{
 			if (tmp->value == tmp2->value)
-				push_swap_error("Doublon");
+				push_swap_error_free("Doublon", *stack, NULL);
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;

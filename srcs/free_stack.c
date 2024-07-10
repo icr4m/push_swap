@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/05 14:57:12 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 16:04:56 by ijaber           ###   ########.fr       */
+/*   Created: 2024/07/10 16:17:17 by ijaber            #+#    #+#             */
+/*   Updated: 2024/07/10 16:17:37 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**check_args(int ac, char **av)
+void	free_stack(t_stack **stack)
 {
-	char	**splitted;
-	int		i;
+	t_stack	*tmp;
 
-	i = 1;
-	check_correct(av + 1);
-	if (ac < 2)
-		push_swap_error("No arguments");
-	if (ac == 2)
+	while (*stack)
 	{
-		return (splitted = ft_split(av[1], ' '));
-	}
-	else
-	{
-		while (i < ac)
-		{
-			ft_printf("av[%d] = %s\n", i, av[i]);
-			i++;
-		}
-		return (av + 1);
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
 }
-

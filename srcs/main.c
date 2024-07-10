@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/06 02:10:49 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 16:49:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,33 @@
 // Fonction pour afficher la pile
 void	print_stack(const char *label, t_stack *stack)
 {
-	printf("%s top -> ", label);
+	printf("%s [ ", label);
 	while (stack)
 	{
 		printf("%ld ", stack->value);
 		stack = stack->next;
 	}
-	printf("-> bottom\n");
+	printf("]\n");
 }
 
 // Fonction pour libérer la mémoire de la pile
-void	free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-}
 
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	**tmp_stack;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	fill_stack(&stack_a, check_args(ac, av));
+	tmp_stack = check_args(ac, av);
+	fill_stack(&stack_a, tmp_stack, ac);
+	check_doublon(&stack_a);
 	print_stack("Stack A", stack_a);
 	print_stack("Stack B", stack_b);
-	sa(&stack_a);
+	pb(&stack_a, &stack_b);
+	pb(&stack_a, &stack_b);
+	rra(&stack_a);
 	print_stack("Stack A", stack_a);
 	print_stack("Stack B", stack_b);
 	free_stack(&stack_a);
