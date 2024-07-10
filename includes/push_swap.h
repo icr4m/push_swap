@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 16:20:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/10 17:23:23 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ void	fill_stack_and_free(t_stack **stack_a, char **splitted);
 
 // free stack
 void	free_stack(t_stack **stack);
+
+// stack utils
+int		ft_stacksize(t_stack *stack);
+
+// little sort
+void	sort_two(t_stack **stack);
 
 // operations 1
 void	swap(t_stack **stack_a);
