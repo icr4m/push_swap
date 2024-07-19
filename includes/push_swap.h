@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 18:29:56 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 13:43:18 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,45 @@ void	fill_stack_and_free(t_stack **stack_a, char **splitted);
 void	free_stack(t_stack **stack);
 
 // stack utils
+int		find_index(t_stack *a, int nbr);
+int		find_place_b(t_stack *stack_b, int nbr_push);
+
+// stack utils 2
 int		ft_stacksize(t_stack *stack);
+long	ft_min(t_stack *stack);
+long	ft_max(t_stack *stack);
+
+// big sort
+void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
+void	big_sort(t_stack **stack_a);
+t_stack	*sort_b(t_stack **stack_a);
+t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b);
 
 // sorted
 int		checksorted(t_stack *stack_a);
+
+// rotate push
+int		apply_rarb(t_stack **a, t_stack **b, int c, char s);
+int		apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
+int		apply_rrarb(t_stack **a, t_stack **b, int c, char s);
+int		apply_rarrb(t_stack **a, t_stack **b, int c, char s);
 
 // little sort
 void	little_sort(t_stack **stack);
 void	sort_two(t_stack **stack);
 void	sort_three(t_stack **stack);
+
+//  solve ab
+int		case_rarb(t_stack *a, t_stack *b, int c);
+int		case_rrarrb(t_stack *a, t_stack *b, int c);
+int		case_rrarb(t_stack *a, t_stack *b, int c);
+int		case_rarrb(t_stack *a, t_stack *b, int c);
+
+// solve ba
+int		case_rarb_a(t_stack *a, t_stack *b, int c);
+int		case_rrarrb_a(t_stack *a, t_stack *b, int c);
+int		case_rarrb_a(t_stack *a, t_stack *b, int c);
+int		case_rrarb_a(t_stack *a, t_stack *b, int c);
 
 // operations 1
 void	swap(t_stack **stack_a);

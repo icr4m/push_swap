@@ -6,11 +6,36 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:35:38 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 12:05:35 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 13:31:20 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
+{
+	int		i;
+	t_stack	*tmp;
+
+	while (ft_stacksize(*stack_a) > 3 && !checksorted(*stack_a))
+	{
+		tmp = *stack_a;
+		i = ft_rotate_type_ab(*stack_a, *stack_b);
+		while (i >= 0)
+		{
+			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->value))
+				i = ft_apply_rarb(stack_a, stack_b, tmp->value, 'a');
+			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->value))
+				i = ft_apply_rrarrb(stack_a, stack_b, tmp->value, 'a');
+			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->value))
+				i = ft_apply_rarrb(stack_a, stack_b, tmp->value, 'a');
+			else if (i == ft_case_rrarb(*stack_a, *stack_b, tmp->value))
+				i = ft_apply_rrarb(stack_a, stack_b, tmp->value, 'a');
+			else
+				tmp = tmp->next;
+		}
+	}
+}
 
 t_stack	*sort_b(t_stack **stack_a)
 {
@@ -28,7 +53,33 @@ t_stack	*sort_b(t_stack **stack_a)
 	return (stack_b);
 }
 
-void	ft_sort(t_stack **stack_a)
+t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
+{
+	int		i;
+	t_stack	*tmp;
+
+	while (*stack_b)
+	{
+		tmp = *stack_b;
+		i = ft_rotate_type_ba(*stack_a, *stack_b);
+		while (i >= 0)
+		{
+			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
+			else
+				tmp = tmp->next;
+		}
+	}
+	return (stack_a);
+}
+
+void	big_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;
 	int		i;
@@ -40,7 +91,7 @@ void	ft_sort(t_stack **stack_a)
 	{
 		stack_b = sort_b(stack_a);
 		stack_a = sort_a(stack_a, &stack_b);
-		i = ft_find_index(*stack_a, ft_min(*stack_a));
+		i = find_index(*stack_a, ft_min(*stack_a));
 		if (i < ft_stacksize(*stack_a) - i)
 		{
 			while ((*stack_a)->value != ft_min(*stack_a))

@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 18:37:27 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 13:30:19 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,23 +43,17 @@ int	main(int ac, char **av)
 	{
 		print_stack("stack_a", stack_a);
 		print_stack("stack_b", stack_b);
-		free_stack(&stack_a);
-		free_stack(&stack_b);
 		return (0);
 	}
-	little_sort(&stack_a);
+	f
 	if (checksorted(stack_a))
 	{
 		print_stack("stack_a", stack_a);
 		print_stack("stack_b", stack_b);
-		free_stack(&stack_a);
-		free_stack(&stack_b);
 		return (0);
 	}
+	ft_printf("stack_a is not sorted\n");
 	print_stack("stack_a", stack_a);
 	print_stack("stack_b", stack_b);
-	ft_printf("stack_a is not sorted\n");
-	free_stack(&stack_a);
-	free_stack(&stack_b);
 	return (0);
 }
