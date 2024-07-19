@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 13:30:19 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 14:24:27 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,6 @@ int	main(int ac, char **av)
 	tmp_stack = check_args(ac, av);
 	fill_stack(&stack_a, tmp_stack, ac);
 	check_doublon(&stack_a);
-	print_stack("stack_a", stack_a);
-	print_stack("stack_b", stack_b);
-	if (checksorted(stack_a))
-	{
-		print_stack("stack_a", stack_a);
-		print_stack("stack_b", stack_b);
-		return (0);
-	}
-	f
-	if (checksorted(stack_a))
-	{
-		print_stack("stack_a", stack_a);
-		print_stack("stack_b", stack_b);
-		return (0);
-	}
-	ft_printf("stack_a is not sorted\n");
-	print_stack("stack_a", stack_a);
-	print_stack("stack_b", stack_b);
+	big_sort(&stack_a);
 	return (0);
 }

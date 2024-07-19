@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 17:16:04 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 13:17:29 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 13:58:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	find_place_b(t_stack *stack_b, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push > stack_b->value && nbr_push < ft_lstlast(stack_b)->content)
+	if (nbr_push > stack_b->value && nbr_push < ft_stacklast(stack_b)->value)
 		i = 0;
 	else if (nbr_push > ft_max(stack_b) || nbr_push < ft_min(stack_b))
 		i = find_index(stack_b, ft_max(stack_b));
@@ -61,7 +61,7 @@ int	find_place_a(t_stack *stack_a, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push < stack_a->value && nbr_push > ft_lstlast(stack_a)->content)
+	if (nbr_push < stack_a->value && nbr_push > ft_stacklast(stack_a)->value)
 		i = 0;
 	else if (nbr_push > ft_max(stack_a) || nbr_push < ft_min(stack_a))
 		i = find_index(stack_a, ft_min(stack_a));

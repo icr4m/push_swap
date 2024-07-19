@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 13:43:18 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 14:02:37 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,11 @@ void	free_stack(t_stack **stack);
 
 // stack utils
 int		find_index(t_stack *a, int nbr);
+int		find_place_a(t_stack *stack_a, int nbr_push);
 int		find_place_b(t_stack *stack_b, int nbr_push);
 
 // stack utils 2
+t_stack	*ft_stacklast(t_stack *stack);
 int		ft_stacksize(t_stack *stack);
 long	ft_min(t_stack *stack);
 long	ft_max(t_stack *stack);
@@ -62,6 +64,10 @@ int		apply_rarb(t_stack **a, t_stack **b, int c, char s);
 int		apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
 int		apply_rrarb(t_stack **a, t_stack **b, int c, char s);
 int		apply_rarrb(t_stack **a, t_stack **b, int c, char s);
+
+// rotate type
+int		rotate_type_ba(t_stack *a, t_stack *b);
+int		rotate_type_ab(t_stack *a, t_stack *b);
 
 // little sort
 void	little_sort(t_stack **stack);

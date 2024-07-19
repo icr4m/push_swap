@@ -6,19 +6,19 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 13:14:27 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 13:16:24 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/07/19 13:57:26 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stacklast(t_stack *lst)
+t_stack	*ft_stacklast(t_stack *stack)
 {
-	if (!lst)
+	if (!stack)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 int	ft_stacksize(t_stack *stack)
