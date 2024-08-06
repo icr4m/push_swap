@@ -6,11 +6,16 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 14:54:20 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 14:57:10 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 15:34:44 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static bool	is_whitespace(char c)
+{
+	return ((c >= 9 && c <= 13) || c == 32);
+}
 
 static bool	ft_isoverflowing(long number, long sign, char c)
 {
@@ -30,11 +35,11 @@ int	ft_atol_safe(long *dest, const char *string)
 	index = 0;
 	sign = 1;
 	number = 0;
-	while (ft_isspace(string[index]))
+	while (is_whitespace(string[index]))
 		index++;
-	if (ft_issign(string[index]))
+	if (string[index] == '+' || string[index] == '-')
 	{
-		if (ft_isminus(string[index]))
+		if (string[index] == '-')
 			sign *= -1;
 		index++;
 	}
