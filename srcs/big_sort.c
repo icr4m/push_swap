@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:35:38 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/19 16:08:07 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 10:15:13 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ t_stack	*sort_b(t_stack **stack_a)
 	stack_b = NULL;
 	if (ft_stacksize(*stack_a) > 3 && !checksorted(*stack_a))
 	{
-		printf("caca\n");
 		pb(stack_a, &stack_b);
 	}
 	if (ft_stacksize(*stack_a) > 3 && !checksorted(*stack_a))
