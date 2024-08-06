@@ -6,25 +6,11 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:20:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 13:09:12 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 13:50:07 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-
-// Fonction pour afficher la pile
-void	print_stack(const char *label, t_stack *stack)
-{
-	printf("%s [ ", label);
-	while (stack)
-	{
-		printf("%d ", stack->value);
-		stack = stack->next;
-	}
-	printf("]\n");
-}
 
 int	main(int ac, char **av)
 {
@@ -43,5 +29,7 @@ int	main(int ac, char **av)
 		big_sort(&stack_a, &stack_b, &data);
 	else
 		sort_a_min(&stack_a, &data);
+	free_stack(&stack_a);
+	free_stack(&stack_a);
 	return (0);
 }

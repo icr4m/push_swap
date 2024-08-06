@@ -3,4 +3,8 @@
 *.out
 push_swap
 .gitmodules
-push_swap_visualizer/
+push_swap*/
+*.txt
+checker_linux
+0
+*.sh
