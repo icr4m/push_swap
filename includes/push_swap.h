@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 10:56:07 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 13:11:40 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,89 +42,85 @@
 # define FALSE 0
 
 // utils
-void			push_swap_error(char *str);
-void			push_swap_error_free(char *str, t_stack *stack_a,
-					t_stack *stack_b);
-void			add_fill_new_node(t_stack **stack, int value, int index);
+void	push_swap_error(char *str);
+void	push_swap_error_free(char *str, t_stack *stack_a, t_stack *stack_b);
+void	add_fill_new_node(t_stack **stack, int value, int index);
 
 // parsing
-char			**check_args(int ac, char **av);
+char	**check_args(int ac, char **av);
 
 // parsing utils
-void			check_correct(char **str);
-void			check_doublon(t_stack **stack);
+void	check_correct(char **str);
+void	check_doublon(t_stack **stack);
 
 // fill stack
-void			fill_stack(t_stack **stack_a, char **av, int ac);
-void			fill_stack_simple(t_stack **stack_a, char **av);
-void			fill_stack_and_free(t_stack **stack_a, char **splitted);
+void	fill_stack(t_stack **stack_a, char **av, int ac);
+void	fill_stack_simple(t_stack **stack_a, char **av);
+void	fill_stack_and_free(t_stack **stack_a, char **splitted);
 
 // free stack
-void			free_stack(t_stack **stack);
+void	free_stack(t_stack **stack);
 
 // stack utils
-int				find_index(t_stack *a, int nbr);
-int				find_place_a(t_stack *stack_a, int nbr_push);
-int				find_place_b(t_stack *stack_b, int nbr_push);
-
+int		find_index(t_stack *a, int nbr);
 // stack utils 2
-t_stack			*ft_stacklast(t_stack *stack);
-int	ft_stacksize(t_stack *# define ERROR -1
-# define SUCCESS 0
-
-# define STDIN 0
-# define STDOUT 1
-# define STDERR 2
-
-# define INDEX_START 0
-# define INDEX_ARGV 1
-# define MIN_ARGC 2
-# define PUSH_COST 1
-# define SAME_VALUE 0
-
-# define SRC_ID -1
-# define DEST_ID 1stack);
-long			ft_min(t_stack *stack);
-long			ft_max(t_stack *stack);
+t_stack	*ft_stacklast(t_stack *stack);
+int		ft_stacksize(t_stack *stack);
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
 
 // big sort
-void			sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
-void			big_sort(t_stack **stack_a);
-t_stack			*sort_b(t_stack **stack_a);
-t_stack			**sort_a(t_stack **stack_a, t_stack **stack_b);
+void	sort_a_min(t_stack **stack_a, t_data *data);
+void	sort_a(t_stack **stack_a, t_data *data);
+void	big_sort(t_stack **stack_a, t_stack **stack_b, t_data *data);
 
 // sorted
-int				checksorted(t_stack *stack_a);
-
-// little sort
-void			little_sort(t_stack **stack);
-void			sort_two(t_stack **stack);
-void			sort_three(t_stack **stack);
+int		checksorted(t_stack *stack_a);
 
 // operations 1
-void			swap(t_stack **stack_a);
-void			sa(t_stack **stack_a);
-void			sb(t_stack **stack_b);
+void	swap(t_stack **stack_a);
+void	sa(t_stack **stack_a);
+void	sb(t_stack **stack_b);
 
 // operations 2
-void			rotate(t_stack **stack);
-void			ra(t_stack **stack_a);
-void			rb(t_stack **stack_b);
-void			rr(t_stack **stack_a, t_stack **stack_b);
+void	rotate(t_stack **stack);
+void	ra(t_stack **stack_a);
+void	rb(t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
 
 // operations 3
-void			pa(t_stack **stack_a, t_stack **stack_b);
-void			pb(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
 
 // operations 4
-void			reverse_rotate(t_stack **stack);
-void			rra(t_stack **stack_a);
-void			rrb(t_stack **stack_b);
-void			rrr(t_stack **stack_a, t_stack **stack_b);
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack **stack_a);
+void	rrb(t_stack **stack_b);
+void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-// targets 
-static t_stack	*find_target_to_b(t_stack *src, t_stack *dest, t_data *data);
-t_stack			*find_target_to_a(t_stack *src, t_stack *dest, t_data *data);
-void	find_targets_to_b(t_stack **src, t_stack **dest, t_data *data)e
+// targets
+t_stack	*find_target_to_a(t_stack *src, t_stack *dest, t_data *data);
+void	find_targets_to_b(t_stack **src, t_stack **dest, t_data *data);
+
+// targets 2
+t_stack	*find_target_altb(t_stack *src, t_stack *dest, t_data *data);
+t_stack	*find_target_alta(t_stack *src, t_stack *dest, t_data *data);
+
+// costs
+size_t	get_1_cost(t_stack *src, t_stack *dest, t_data *data);
+void	gets_costs(t_stack **src, t_stack **dest, t_data *data);
+
+// moves
+void	move_both(t_stack **stack_a, t_stack **stack_b, t_data *data,
+			void (*f)(t_stack **, t_stack **));
+void	move(t_stack **stack, t_data *data, int id, void (*f)(t_stack **));
+
+// transfers
+void	transfer_to_stack_b(t_stack **stack_a, t_stack **stack_b, t_data *data);
+void	transfer_to_stack_a(t_stack **stack_a, t_stack **stack_b, t_data *data);
+
+// data
+void	update_data(t_stack **src, t_stack **dest, t_data *data);
+void	init_data(t_stack **stack_a, t_data *data);
 
 #endif

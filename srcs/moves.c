@@ -1,49 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils2.c                                     :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 13:14:27 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 11:15:55 by ijaber           ###   ########.fr       */
+/*   Created: 2024/08/06 11:18:56 by ijaber            #+#    #+#             */
+/*   Updated: 2024/08/06 11:43:02 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stacklast(t_stack *stack)
+void	move_both(t_stack **stack_a, t_stack **stack_b, t_data *data,
+		void (*f)(t_stack **, t_stack **))
 {
-	if (!stack)
-		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
+	f(stack_a, stack_b);
+	data->src_to_head--;
+	data->dest_to_head--;
 }
 
-int	ft_stacksize(t_stack *stack)
+void	move(t_stack **stack, t_data *data, int id, void (*f)(t_stack **))
 {
-	size_t	i;
-
-	i = 0;
-	while (stack)
+	if (id == SRC_ID)
 	{
-		stack = stack->next;
-		i++;
+		f(stack);
+		data->src_to_head--;
 	}
-	return (i);
-}
-
-int	ft_max(int a, int b)
-{
-	if (a >= b)
-		return (a);
-	return (b);
-}
-
-int	ft_min(int a, int b)
-{
-	if (a <= b)
-		return (a);
-	return (b);
+	else if (id == DEST_ID)
+	{
+		f(stack);
+		data->dest_to_head--;
+	}
 }

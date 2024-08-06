@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:42:55 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 10:52:01 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 13:05:21 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	find_targets_to_b(t_stack **src, t_stack **dest, t_data *data)
 	node = *src;
 	while (node != NULL)
 	{
-		node->value = ft_find_target_to_b(node, *dest, data);
+		node->target = find_target_to_b(node, *dest, data);
 		node = node->next;
 	}
 }
