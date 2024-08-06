@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:04:48 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 14:03:27 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 15:22:04 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,26 @@ void	fill_stack(t_stack **stack_a, char **av, int ac)
 
 void	fill_stack_simple(t_stack **stack_a, char **av)
 {
-	int	i;
+	int		i;
+	long	value;
 
+	value = 0;
 	i = 0;
 	while (av[i] != NULL)
 	{
-		add_fill_new_node(stack_a, ft_atoi(av[i]), i);
+		if (ft_atol_safe(&value, av[i]) == 0)
+			push_swap_error_free("Overflow", stack_a, NULL);
+		add_fill_new_node(stack_a, (int)value, i);
 		i++;
 	}
 }
 
 void	fill_stack_and_free(t_stack **stack_a, char **splitted)
 {
-	int	i;
+	int		i;
+	long	value;
 
+	value = 0;
 	i = 0;
 	if (!splitted)
 	{
@@ -43,7 +49,9 @@ void	fill_stack_and_free(t_stack **stack_a, char **splitted)
 	}
 	while (splitted[i] != NULL)
 	{
-		add_fill_new_node(stack_a, ft_atoi(splitted[i]), i);
+		if (ft_atol_safe(&value, splitted[i]) == 0)
+			push_swap_error_free("Overflow", stack_a, NULL);
+		add_fill_new_node(stack_a, (int)value, i);
 		free(splitted[i]);
 		i++;
 	}
