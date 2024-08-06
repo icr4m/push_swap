@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 16:04:48 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 16:20:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 14:03:27 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	fill_stack_simple(t_stack **stack_a, char **av)
 
 void	fill_stack_and_free(t_stack **stack_a, char **splitted)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!splitted)

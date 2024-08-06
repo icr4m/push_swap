@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/10 18:25:22 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 18:29:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 14:03:18 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	checksorted(t_stack *stack_a)
 {
-	int i;
+	int	i;
 
 	i = stack_a->value;
 	while (stack_a)

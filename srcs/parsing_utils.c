@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 17:41:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/10 16:20:48 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/06 14:02:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	check_correct(char **str)
 		{
 			if (!ft_isdigit(str[i][j]) && str[i][j] != '-' && str[i][j] != '+'
 				&& str[i][j] != ' ')
-				push_swap_error("Invalid number");
+				push_swap_error("invalid character ");
 			if ((str[i][j] == '-' || str[i][j] == '+') && !ft_isdigit(str[i][j
 					+ 1]))
-				push_swap_error("Invalid number");
+				push_swap_error("invalid character");
 			j++;
 		}
 		i++;
@@ -37,8 +37,8 @@ void	check_correct(char **str)
 
 void	check_doublon(t_stack **stack)
 {
-	t_stack *tmp;
-	t_stack *tmp2;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
 	tmp = *stack;
 	while (tmp != NULL)
