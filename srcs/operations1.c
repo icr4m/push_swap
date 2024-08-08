@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:07:25 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 14:20:30 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:46:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack_a)
+static void	swap(t_stack **stack_a)
 {
 	int	tmp;
 

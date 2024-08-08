@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:52:59 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 13:06:28 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:07:02 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap_error_free(char *str, t_stack *stack_a, t_stack *stack_b)
+void	push_swap_error_free(char *str, t_stack *stack_a)
 {
 	ft_printf("Error\n");
 	ft_printf("%s\n", str);

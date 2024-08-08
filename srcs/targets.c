@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:42:55 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 13:05:21 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:33:09 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_stack	*find_target_to_b(t_stack *src, t_stack *dest, t_data *data)
 		return (dest);
 	}
 	else
-		return (find_target_altb(src, dest, data));
+		return (find_target_altb(src, dest));
 }
 
 t_stack	*find_target_to_a(t_stack *src, t_stack *dest, t_data *data)
@@ -33,7 +33,7 @@ t_stack	*find_target_to_a(t_stack *src, t_stack *dest, t_data *data)
 		return (dest);
 	}
 	else
-		return (find_target_alta(src, dest, data));
+		return (find_target_alta(src, dest));
 }
 
 void	find_targets_to_b(t_stack **src, t_stack **dest, t_data *data)

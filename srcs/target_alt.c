@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 11:44:57 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 14:02:47 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:31:28 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*find_target_altb(t_stack *src, t_stack *dest, t_data *data)
+t_stack	*find_target_altb(t_stack *src, t_stack *dest)
 {
 	bool	btw;
 	bool	first;
@@ -36,7 +36,7 @@ t_stack	*find_target_altb(t_stack *src, t_stack *dest, t_data *data)
 	return (dest);
 }
 
-t_stack	*find_target_alta(t_stack *src, t_stack *dest, t_data *data)
+t_stack	*find_target_alta(t_stack *src, t_stack *dest)
 {
 	bool	btw;
 	bool	first;

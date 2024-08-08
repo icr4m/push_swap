@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/06 10:45:24 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 13:11:24 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:47:41 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	init_data(t_stack **stack_a, t_data *data)
 {
 	data->size = ft_stacksize(*stack_a);
 	data->size_src = data->size;
-	data->size_dest = INDEX_START;
+	data->size_dest = 0;
 	data->min_src = ft_get_min(*stack_a);
 	data->max_src = ft_get_max(*stack_a);
 	data->min_dest = INT_MAX;

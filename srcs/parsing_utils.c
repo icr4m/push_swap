@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 17:41:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 14:02:59 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:08:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	check_doublon(t_stack **stack)
 		while (tmp2 != NULL)
 		{
 			if (tmp->value == tmp2->value)
-				push_swap_error_free("Doublon", *stack, NULL);
+				push_swap_error_free("Doublon", *stack);
 			tmp2 = tmp2->next;
 		}
 		tmp = tmp->next;

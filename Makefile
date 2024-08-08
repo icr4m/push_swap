@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRCS = $(addprefix srcs/, big_sort.c costs.c data.c fill_stack.c free_stack.c main.c moves.c operations1.c operations2.c operations3.c operations4.c overflow.c parsing_utils.c parsing.c push_swap_utils.c sorted.c stack_utils.c stack_utils2.c target_alt.c targets.c transfers.c)
+SRCS = $(addprefix srcs/, big_sort.c costs.c data.c fill_stack.c free_stack.c main.c moves.c operations1.c operations2.c operations3.c operations4.c overflow.c parsing_utils.c parsing.c push_swap_utils.c sorted.c stack_utils.c target_alt.c targets.c transfers.c)
 OBJ =  $(SRCS:.c=.o)
 
 # CCFLAGS = -Wall -Wextra -Werror

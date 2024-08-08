@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 11:35:38 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 13:12:10 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 14:49:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static void	sort_to_b(t_stack **stack_a, t_stack **stack_b, t_data *data)
 {
 	pb(stack_a, stack_b);
 	update_data(stack_a, stack_b, data);
-	if (data->size_src > MIN_STACK_A)
+	if (data->size_src > 3)
 		pb(stack_a, stack_b);
 	update_data(stack_a, stack_b, data);
-	while (data->size_src != MIN_STACK_A)
+	while (data->size_src != 3)
 	{
 		find_targets_to_b(stack_a, stack_b, data);
 		gets_costs(stack_a, stack_b, data);
@@ -30,7 +30,7 @@ static void	sort_to_b(t_stack **stack_a, t_stack **stack_b, t_data *data)
 
 void	sort_a_min(t_stack **stack_a, t_data *data)
 {
-	if (data->size_src == MIN_STACK_A && checksorted(*stack_a) == FALSE)
+	if (data->size_src == 3 && checksorted(*stack_a) == FALSE)
 	{
 		if ((*stack_a)->value == data->max_src)
 			ra(stack_a);
