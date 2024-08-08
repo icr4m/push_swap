@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:59:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/06 11:00:50 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 18:00:51 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,11 @@ typedef struct s_data
 	bool			dest_up;
 	t_stack			*cheapest;
 }					t_data;
+
+typedef struct s_input
+{
+	char			*op;
+	struct s_input	*next;
+}					t_input;
 
 #endif

@@ -4,8 +4,8 @@ BONUS_NAME = checker
 SRCS = $(addprefix srcs/, big_sort.c costs.c data.c fill_stack.c free_stack.c moves.c operations1.c operations2.c operations3.c operations4.c overflow.c parsing_utils.c parsing.c push_swap_utils.c sorted.c stack_utils.c target_alt.c targets.c transfers.c)
 MAIN = $(addprefix srcs/, main.c)
 
-SRCS_B = $(addprefix srcs_bonus/, main_checker.c activate_op.c)
-MAIN_B = $(addprefix srcs_bonus/, main.c)
+SRCS_B = $(addprefix srcs_bonus/, activate_op.c check_op.c)
+MAIN_B = $(addprefix srcs_bonus/, main_checker.c)
 
 OBJ =  $(SRCS:.c=.o)
 OBJ_B = $(SRCS_B:.c=.o)
