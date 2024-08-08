@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 14:50:07 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 15:31:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "struct.h"
 # include <stdio.h>
 # include <stdlib.h>
-	
+
 # define PUSH_COST 1
 
 # define SRC_ID -1
