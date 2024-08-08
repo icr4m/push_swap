@@ -20,7 +20,7 @@ $(NAME) : $(LIB_OBJS)
 	$(AR) $(NAME) $(LIB_OBJS)
 
 .c.o: 
-	cc $(CCFLAGS) $(INCLUDES) -c $< -o ${<:.c=.o}
+	cc $(CFLAGS) $(INCLUDES) -c $< -o ${<:.c=.o}
 	
 clean:
 	rm -rf ${LIB_OBJS}

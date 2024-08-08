@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 15:31:59 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/08 16:21:32 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../Libft/libft/includes/ft_printf.h"
+# include "../Libft/libft/includes/get_next_line_bonus.h"
 # include "../Libft/libft/includes/libft.h"
 # include "struct.h"
 # include <stdio.h>
