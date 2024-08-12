@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:53:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 19:17:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 21:10:58 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	checker(t_stack **stack)
 		if (r_op == 0)
 			push_swap_error_free("Incorrect operations", *stack);
 		ft_printf("%d\n", r_op);
-		input->op = str_read;
+		input = init_new_input(input, str_read);
 		str_read = get_next_line(0);
 	}
 	ft_print_stack(input);
@@ -44,9 +44,9 @@ void	checker(t_stack **stack)
 
 int	main(int ac, char **av)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
-	char **tmp_stack;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+	char	**tmp_stack;
 
 	stack_a = NULL;
 	stack_b = NULL;
