@@ -67,5 +67,7 @@ fclean: clean
 
 re: fclean all
 
+rb: re bonus
+
 all: $(NAME)
 

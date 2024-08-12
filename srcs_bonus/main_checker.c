@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:53:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/12 21:10:58 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 21:57:18 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_print_stack(t_input *stack)
 {
-	while (stack != NULL)
+	t_input	*tmp;
+
+	tmp = stack;
+	while (tmp != NULL)
 	{
-		ft_printf("%s>>", stack->op);
-		stack = stack->next;
+		ft_printf("%s>>", tmp->op);
+		tmp = tmp->next;
 	}
 }
 
@@ -32,14 +35,14 @@ void	checker(t_stack **stack)
 	while (str_read != NULL)
 	{
 		r_op = check_op(str_read);
-		free(str_read);
 		if (r_op == 0)
 			push_swap_error_free("Incorrect operations", *stack);
-		ft_printf("%d\n", r_op);
 		input = init_new_input(input, str_read);
+		free(str_read);
 		str_read = get_next_line(0);
 	}
-	ft_print_stack(input);
+	free(str_read);
+	
 }
 
 int	main(int ac, char **av)

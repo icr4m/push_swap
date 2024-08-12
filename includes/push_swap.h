@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 16:21:32 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 22:58:59 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,24 @@ void	big_sort(t_stack **stack_a, t_stack **stack_b, t_data *data);
 int		checksorted(t_stack *stack_a);
 
 // operations 1
+void	swap(t_stack **stack_a);
 void	sa(t_stack **stack_a);
 void	sb(t_stack **stack_b);
+void	ss(t_stack **stack_a, t_stack **stack_b);
 
 // operations 2
+void	rotate(t_stack **stack);
 void	ra(t_stack **stack_a);
 void	rb(t_stack **stack_b);
 void	rr(t_stack **stack_a, t_stack **stack_b);
 
 // operations 3
+void	push(t_stack **src, t_stack **dest);
 void	pa(t_stack **stack_a, t_stack **stack_b);
 void	pb(t_stack **stack_a, t_stack **stack_b);
 
 // operations 4
+void	reverse_rotate(t_stack **stack);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);

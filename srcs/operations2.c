@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 16:25:18 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 14:46:38 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 22:57:48 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **stack)
+void	rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;

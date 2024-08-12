@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:05:21 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 15:35:02 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 22:56:39 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	activate_swap(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a != NULL)
-		sa(stack_a);
+		swap(stack_a);
 	if (stack_b != NULL)
-		sb(stack_b);
+		swap(stack_b);
 }
 
 void	activate_rotate(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a != NULL)
-		ra(stack_a);
+		rotate(stack_a);
 	if (stack_b != NULL)
-		rb(stack_b);
+		rotate(stack_b);
 }
 
 void	activate_reverse_rotate(t_stack **stack_a, t_stack **stack_b)

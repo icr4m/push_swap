@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 13:12:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 14:46:16 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 22:58:49 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	reverse_rotate(t_stack **stack)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		i;

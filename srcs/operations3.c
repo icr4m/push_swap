@@ -6,34 +6,32 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 12:51:17 by ijaber            #+#    #+#             */
-/*   Updated: 2024/07/05 13:00:16 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 22:57:20 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp;
 
-	if (!*stack_b)
+	if (!*src)
 		return ;
-	tmp = *stack_a;
-	*stack_a = *stack_b;
-	*stack_b = (*stack_b)->next;
-	(*stack_a)->next = tmp;
-	write(1, "pa\n", 3);
+	tmp = *dest;
+	*dest = *src;
+	*src = (*src)->next;
+	(*dest)->next = tmp;
+}
+
+void	pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push(stack_b, stack_a);
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*tmp;
-
-	if (!*stack_a)
-		return ;
-	tmp = *stack_b;
-	*stack_b = *stack_a;
-	*stack_a = (*stack_a)->next;
-	(*stack_b)->next = tmp;
-	write(1, "pb\n", 3);
+	push(stack_a, stack_b);
+	ft_printf("pb\n");
 }
