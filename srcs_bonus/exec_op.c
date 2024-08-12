@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 21:57:32 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/13 00:12:40 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/13 00:39:06 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static void	exec_1_op(t_ops op, t_stack **stack_a, t_stack **stack_b)
 	else if (op == swap_swap)
 		activate_ss(stack_a, stack_b);
 	else if (op == push_a)
-		push(stack_a, stack_b);
-	else if (op == push_b)
 		push(stack_b, stack_a);
+	else if (op == push_b)
+		push(stack_a, stack_b);
 	else if (op == rot_a)
 		rotate(stack_a);
 	else if (op == rot_b)

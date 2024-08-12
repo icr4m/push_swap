@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:53:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/13 00:14:59 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/13 01:11:50 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_stack(const char *label, t_stack *stack)
 	printf("]\n");
 }
 
-void	checker(t_stack **stack_a)
+int	checker(t_stack **stack_a)
 {
 	t_input	*input;
 	char	*str_read;
@@ -37,17 +37,17 @@ void	checker(t_stack **stack_a)
 	{
 		r_op = check_op(str_read);
 		free(str_read);
-		if (r_op == 0)
+		if (r_op > 10 || r_op < 0)
 			push_swap_error_free("Incorrect operations", *stack_a);
 		input = init_new_input(input, r_op);
 		str_read = get_next_line(0);
 	}
 	free(str_read);
-	print_stack("stack_a", *stack_a);
-	print_stack("stack_b", stack_b);
 	exec_all_ops(input, stack_a, &stack_b);
-	print_stack("stack_a", *stack_a);
-	print_stack("stack_b", stack_b);
+	free_input(input);
+	if (stack_empty(stack_b) == TRUE && checksorted(*stack_a) == TRUE)
+		return (is_ok(stack_a, &stack_b));
+	return (is_ko(stack_a, &stack_b));
 }
 
 int	main(int ac, char **av)
