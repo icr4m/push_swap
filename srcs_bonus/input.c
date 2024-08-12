@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 21:02:40 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/12 21:03:54 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/13 00:06:43 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static t_input	*ft_input_add_back(t_input **input, t_input *new)
 	return (*input);
 }
 
-static t_input	*ft_new_node(char *op)
+static t_input	*ft_new_node(t_ops op)
 {
 	t_input	*node;
 
@@ -51,7 +51,7 @@ static t_input	*ft_new_node(char *op)
 	return (node);
 }
 
-t_input	*init_new_input(t_input *input, char *op)
+t_input	*init_new_input(t_input *input, t_ops op)
 {
 	t_input	*new;
 

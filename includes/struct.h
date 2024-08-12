@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 14:59:26 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/08 18:00:51 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 23:56:43 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,24 @@ typedef struct s_data
 	t_stack			*cheapest;
 }					t_data;
 
+typedef enum e_ops
+{
+	swap_a,
+	swap_b,
+	swap_swap,
+	push_a,
+	push_b,
+	rot_a,
+	rot_b,
+	rot_rot,
+	rev_rot_a,
+	rev_rot_b,
+	rev_rot_rot
+}					t_ops;
+
 typedef struct s_input
 {
-	char			*op;
+	t_ops			op;
 	struct s_input	*next;
 }					t_input;
 

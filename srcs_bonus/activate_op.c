@@ -6,13 +6,13 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:05:21 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/12 22:56:39 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/12 23:23:27 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	activate_swap(t_stack **stack_a, t_stack **stack_b)
+void	activate_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a != NULL)
 		swap(stack_a);
@@ -20,7 +20,7 @@ void	activate_swap(t_stack **stack_a, t_stack **stack_b)
 		swap(stack_b);
 }
 
-void	activate_rotate(t_stack **stack_a, t_stack **stack_b)
+void	activate_r(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a != NULL)
 		rotate(stack_a);
@@ -28,7 +28,7 @@ void	activate_rotate(t_stack **stack_a, t_stack **stack_b)
 		rotate(stack_b);
 }
 
-void	activate_reverse_rotate(t_stack **stack_a, t_stack **stack_b)
+void	activate_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a != NULL)
 		rra(stack_a);
