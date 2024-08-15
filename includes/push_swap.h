@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:54:29 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/13 00:44:08 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/15 23:08:44 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../Libft/libft/includes/ft_printf.h"
 # include "../Libft/libft/includes/get_next_line_bonus.h"
 # include "../Libft/libft/includes/libft.h"
+# include "push_swap.h"
 # include "struct.h"
 # include <stdio.h>
 # include <stdlib.h>
