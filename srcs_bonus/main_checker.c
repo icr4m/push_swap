@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:53:01 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/13 01:11:50 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/15 23:16:45 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	checker(t_stack **stack_a)
 		r_op = check_op(str_read);
 		free(str_read);
 		if (r_op > 10 || r_op < 0)
-			push_swap_error_free("Incorrect operations", *stack_a);
+			checker_error_free("Incorrect operations", *stack_a, input);
 		input = init_new_input(input, r_op);
 		str_read = get_next_line(0);
 	}

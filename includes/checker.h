@@ -6,7 +6,7 @@
 /*   By: ijaber <ijaber@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 15:08:45 by ijaber            #+#    #+#             */
-/*   Updated: 2024/08/13 01:11:23 by ijaber           ###   ########.fr       */
+/*   Updated: 2024/08/15 23:16:26 by ijaber           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void	activate_rr(t_stack **stack_a, t_stack **stack_b);
 
 // check op
 int		check_op(char *str_read);
+
+// error
+void	checker_error_free(char *error_msg, t_stack *stack_a, t_input *input);
 
 // exec op
 void	exec_all_ops(t_input *input, t_stack **stack_a, t_stack **stack_b);
